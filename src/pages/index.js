@@ -69,8 +69,8 @@ const IndexPage = () => {
           }
 
           const html = `
-          <span class=“icon-marker”>
-            <span class=“icon-marker-tooltip”>
+          <span class="icon-marker">
+            <span class="icon-marker-tooltip">
               <h2>${country}</h2>
               <ul>
                 <li><strong>Confirmed:</strong> ${cases}</li>
