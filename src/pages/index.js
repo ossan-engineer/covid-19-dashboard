@@ -25,6 +25,30 @@ const IndexPage = () => {
     try {
       const res = await axios.get('https://corona.lmao.ninja/countries');
       const countries = res.data || [];
+      const hasData = Array.isArray(countries) && countries.length > 0;
+
+      if (!hasData) {
+        return;
+      }
+
+      const geoJson = {
+        type: 'FeatureCollection',
+        feature: countries.map((country = {}) => {
+          const { countryInfo = {} } = country;
+          const { lat, long: lng } = countryInfo;
+          return {
+            type: 'Feature',
+            properties: {
+              ...country,
+            },
+            geometry: {
+              type: 'Point',
+              coordinates: [lng, lat],
+            },
+          };
+        }),
+      };
+      console.log(geoJson);
     } catch (e) {
       console.error(`Failed to fetch countries: ${e.message}, e`);
     }
