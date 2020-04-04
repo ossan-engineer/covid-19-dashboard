@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import Helmet from 'react-helmet';
 import L from 'leaflet';
+import axios from 'axios';
+
 import Layout from 'components/Layout';
 import Container from 'components/Container';
 import Map from 'components/Map';
@@ -19,7 +21,14 @@ const IndexPage = () => {
    * @example Here this is and example of being used to zoom in and set a popup on load
    */
 
-  async function mapEffect({ leafletElement: map } = {}) {}
+  async function mapEffect({ leafletElement: map } = {}) {
+    try {
+      const res = await axios.get('https://corona.lmao.ninja/countries');
+      const countries = res.data || [];
+    } catch (e) {
+      console.error(`Failed to fetch countries: ${e.message}, e`);
+    }
+  }
 
   const mapSettings = {
     center: CENTER,
