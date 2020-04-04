@@ -1,8 +1,7 @@
 header {
-
   width: 100%;
   color: $white;
-  background-color: $gatsby-purple;
+  background-color: $full-black;
 
   .container {
     display: flex;
@@ -25,7 +24,7 @@ header {
     display: block;
     color: lighten($gatsby-purple, 50);
     text-decoration: none;
-    padding: 0 .5em;
+    padding: 0 0.5em;
   }
 
   p {
@@ -33,5 +32,4 @@ header {
     font-weight: bold;
     margin: 0;
   }
-
 }

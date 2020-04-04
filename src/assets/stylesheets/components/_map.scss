@@ -43,7 +43,11 @@
   font-weight: bold;
   background-color: $red-800;
   border-radius: 100%;
-  box-shadow: 0 2px 5px rgba(black, 0.9);
+  box-shadow: 0 2px 5px rgba(black, 0.4);
+
+  &.light {
+    background-color: $red-400;
+  }
 
   &:hover {
     .icon-marker-tooltip {

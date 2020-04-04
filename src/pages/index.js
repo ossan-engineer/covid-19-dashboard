@@ -69,7 +69,7 @@ const IndexPage = () => {
           }
 
           const html = `
-          <span class="icon-marker">
+          <span class="icon-marker ${cases <= 1000 && 'light'}">
             <span class="icon-marker-tooltip">
               <h2>${country}</h2>
               <ul>
@@ -112,19 +112,6 @@ const IndexPage = () => {
         <title>Home Page</title>
       </Helmet>
       <Map {...mapSettings}></Map>
-      <Container type="content" className="text-center home-start">
-        <h2>Still Getting Started?</h2>
-        <p>Run the following in your terminal!</p>
-        <pre>
-          <code>
-            gatsby new [directory]
-            https://github.com/colbyfayock/gatsby-starter-leaflet
-          </code>
-        </pre>
-        <p className="note">
-          Note: Gatsby CLI required globally for the above command
-        </p>
-      </Container>
     </Layout>
   );
 };
